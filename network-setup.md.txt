@@ -22,4 +22,20 @@
 2. **PC2**: 210.3.14.3 
 3. **PC4**: 210.3.14.5
 
+Specify Network Details for the DHCP Pool
+Define the network range and the default gateway that will be assigned to clients:
+Router(dhcp-config)# network 192.168.1.0 255.255.255.0
+Router(dhcp-config)# default-router 192.168.1.1
+Enable the DHCP Service on the Router:
+Router(config)# service dhcp
+Configure the Interface:
+Router(config)# interface GigabitEthernet0/0
+Router(config-if)# ip address 192.168.1.1 255.255.255.0
+Router(config-if)# no shutdown
+Verify the DHCP:
+Router# show ip dhcp pool
+Router# show ip dhcp binding
+
+
+
 
